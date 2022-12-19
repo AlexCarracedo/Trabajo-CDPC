@@ -1,22 +1,22 @@
 const COLOR0 = "white";
 const COLOR_JUG1 = "red";
 const COLOR_JUG2 = "blue";
-var breakdraw=0;
-var ra = 0;
-var rb = 0;
-var rc = 0;
-var rd = 0;
-var re = 0;
-var rf = 0;
-var rg = 0;
-var ja = 0;
-var jb = 0;
-var jc = 0;
-var jd = 0;
-var je = 0;
-var jf = 0;
-var jg = 0;
-var p = 0;
+//var breakdraw=0;
+//var ra = 0;
+//var rb = 0;
+//var rc = 0;
+//var rd = 0;
+//var re = 0;
+//var rf = 0;
+//var rg = 0;
+//var ja = 0;
+//var jb = 0;
+//var jc = 0;
+//var jd = 0;
+//var je = 0;
+//var jf = 0;
+//var jg = 0;
+//var p = 0;
 //La variable i para alternar los turnos
 var i = 0;
 //La variable x e y son para el tablero
@@ -109,7 +109,7 @@ function clickColumna(_event) {
         //    div.textContent;
         //    breakdraw=1;
         //}
-        if (i%2==1 && breakdraw==0) {
+        if (i%2==1) {
             var div = document.querySelector("div");  // <div></div>
             div.textContent = "ES EL TURNO DE LAS AZULES."; // <div>Hola a todos</div>
             div.textContent;
@@ -159,7 +159,7 @@ function clickColumna(_event) {
             i=i+1;
             g=g+1;
         }
-        if (i%2==0 && breakdraw==0) {
+        if (i%2==0) {
             var div = document.querySelector("div");  // <div></div>
             div.textContent = "ES EL TURNO DE LAS ROJAS."; // <div>Hola a todos</div>
             div.textContent;
