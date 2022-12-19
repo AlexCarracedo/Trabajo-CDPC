@@ -169,4 +169,3 @@ function clickColumna(_event) {
     }
 }
 }
-//Faltaría poner que cuando haya un 4 en raya se pare el juego y diga quién gana y hacer más estética la caída de la ficha
