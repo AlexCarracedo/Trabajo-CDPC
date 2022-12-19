@@ -57,7 +57,7 @@ function draw(){
     addEventListener("click", clickColumna);
 }
 function clickColumna(_event) {
-    //if (i<41) {
+    if (i<41) {
     //if (breakdraw==0) {
     //Según si i sea o no múltiplo de 2, le tocará a un jugador u otro, añadiendo 1 a i a cada movimiento, de modo que se vayan alternando los turnos
     if (i%2==0) {
@@ -65,43 +65,36 @@ function clickColumna(_event) {
         if (mouseX >= 100/3-75/6 && mouseX <= 100/3+75/6 && a < 6) {
             fill(COLOR_JUG1);
             ellipse(100/3, 200-100/3*a, 75/3,75/3);
-            i=i+1;
             a=a+1;
         }
         if (mouseX >= 200/3-75/6 && mouseX <= 200/3+75/6 && b < 6) {
             fill(COLOR_JUG1);
             ellipse(200/3, 200-100/3*b, 75/3,75/3);
-            i=i+1;
             b=b+1;
         }
         if (mouseX >= 100-75/6 && mouseX <= 100+75/6 && m < 6) {
             fill(COLOR_JUG1);
             ellipse(100, 200-100/3*m, 75/3,75/3);
-            i=i+1;
             m=m+1;
         }
         if (mouseX >= 400/3-75/6 && mouseX <= 400/3+75/6 && d < 6) {
             fill(COLOR_JUG1);
             ellipse(400/3, 200-100/3*d, 75/3,75/3);
-            i=i+1;
             d=d+1;
         }
         if (mouseX >= 500/3-75/6 && mouseX <= 500/3+75/6 && e < 6) {
             fill(COLOR_JUG1);
             ellipse(500/3, 200-100/3*e, 75/3,75/3);
-            i=i+1;
             e=e+1;
         }
         if (mouseX >= 200-75/6 && mouseX <= 200+75/6 && n < 6) {
             fill(COLOR_JUG1);
             ellipse(600/3, 600/3-100/3*n, 75/3,75/3);
-            i=i+1;
             n=n+1;
         }
         if (mouseX >= 700/3-75/6 && mouseX <= 700/3+75/6 && g < 6) {
             fill(COLOR_JUG1);
             ellipse(700/3, 600/3-100/3*g, 75/3, 75/3);
-            i=i+1;
             g=g+1;
         }
         //if () {
@@ -109,7 +102,8 @@ function clickColumna(_event) {
         //    div.textContent;
         //    breakdraw=1;
         //}
-        if (i%2==1) {
+        i=i+1;
+        if (i%2==0) {
             var div = document.querySelector("div");  // <div></div>
             div.textContent = "ES EL TURNO DE LAS AZULES."; // <div>Hola a todos</div>
             div.textContent;
@@ -120,19 +114,16 @@ function clickColumna(_event) {
         if (mouseX >= 100/3-75/6 && mouseX <= 100/3+75/6 && a < 6) {
             fill(COLOR_JUG2);
             ellipse(100/3, 200-100/3*a, 75/3,75/3);
-            i=i+1;
             a=a+1;
         }
         if (mouseX >= 200/3-75/6 && mouseX <= 200/3+75/6 && b < 6) {
             fill(COLOR_JUG2);
             ellipse(200/3, 200-100/3*b, 75/3,75/3);
-            i=i+1;
             b=b+1;
         }
-        if (mouseX >= 100-75/6 && mouseX <= 100+75/6 && m < 6) {
+        if (mouseX >= 100-75/6 && mouseX <= 100+75/6 && c < 6) {
             fill(COLOR_JUG2);
             ellipse(100, 200-100/3*m, 75/3,75/3);
-            i=i+1;
             m=m+1;
         }
         if (mouseX >= 400/3-75/6 && mouseX <= 400/3+75/6 && d < 6) {
@@ -168,9 +159,9 @@ function clickColumna(_event) {
         //Depende de la columna que se elija, se le añade 1 a las variables a, b, m, d, e, n o g para que si un jugador ya ha puesto en alguna de esas columnas, el siguiente movimiento ahí sea encima de la última ficha y no se solapen
     }
 //}
-    //} else {
-        //var div = document.querySelector("div");
-       //     div.textContent = "ES EMPATE.";
-         //   div.textContent;
-    //}
+    } else {
+        var div = document.querySelector("div");
+            div.textContent = "ES EMPATE.";
+            div.textContent;
+    }
 }
