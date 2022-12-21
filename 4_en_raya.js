@@ -2,21 +2,6 @@ const COLOR0 = "white";
 const COLOR_JUG1 = "red";
 const COLOR_JUG2 = "blue";
 //var breakdraw=0;
-//var ra = 0;
-//var rb = 0;
-//var rc = 0;
-//var rd = 0;
-//var re = 0;
-//var rf = 0;
-//var rg = 0;
-//var ja = 0;
-//var jb = 0;
-//var jc = 0;
-//var jd = 0;
-//var je = 0;
-//var jf = 0;
-//var jg = 0;
-//var p = 0;
 //La variable i para alternar los turnos
 var i = 0;
 //La variable x e y son para el tablero
