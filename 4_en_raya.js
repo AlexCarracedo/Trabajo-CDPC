@@ -2,8 +2,6 @@ const COLOR0 = "white";
 const COLOR_JUG1 = "red";
 const COLOR_JUG2 = "blue";
 //var breakdraw=0;
-//La variable i para alternar los turnos
-var i = 0;
 //La variable x e y son para el tablero
 var x = 0;
 var y = 100;
@@ -15,6 +13,10 @@ var d = 0;
 var e = 0;
 var f = 0;
 var g = 0;
+var i = parseInt(prompt("¿Que jugador comienza? (0->Rojas/1->Azules)"));
+if (i<0 | (i>0 && i<1) | i>1) {
+    var i = parseInt(prompt("¿Que jugador comienza? (0->Rojas/1->Azules)"));
+}
 function setup() {
     createCanvas(800,700);
     background(5, 136, 211);
@@ -36,13 +38,18 @@ function draw(){
         div.textContent = "Comienzan las rojas. Pulsa para empezar."; // <div>Hola a todos</div>
         div.textContent;
     }
+    if (i==1) {
+        var div = document.querySelector("div");  // <div></div>
+        div.textContent = "Comienzan las azules. Pulsa para empezar."; // <div>Hola a todos</div>
+        div.textContent;
+    }
     //fill(COLOR_JUG1);
     //ellipse(100, 600, 75, 75);
    //Hacemos una llamada para poder interactuar con el programa pulsando, en este caso, sobre las columnas
     addEventListener("click", clickColumna);
 }
 function clickColumna(_event) {
-    if (i<41) {
+    if (a<6 && b<6 && c<6 && d<6 && e<6 && f<6 && g<6) {
     //if (breakdraw==0) {
     //Según si i sea o no múltiplo de 2, le tocará a un jugador u otro, añadiendo 1 a i a cada movimiento, de modo que se vayan alternando los turnos
     if (i%2==0) {
