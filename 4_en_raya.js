@@ -13,9 +13,18 @@ var d = 0;
 var e = 0;
 var f = 0;
 var g = 0;
-var i = parseInt(prompt("¿Que jugador comienza? (0->Rojas/1->Azules)"));
-if (i<0 | (i>0 && i<1) | i>1) {
-    var i = parseInt(prompt("¿Que jugador comienza? (0->Rojas/1->Azules)"));
+var h = 0;
+var i = parseInt(prompt("Seleccione el color que comience la pertida (0->Rojas/1->Azules)"));
+if (i==0 | i==1) {
+    h=1;
+}
+while (h==0) {
+    if (i!==0 | i!==1) {
+        var i = parseInt(prompt("Seleccione el color que comience la pertida (0->Rojas/1->Azules)"));
+    }
+    if (i==0 | i==1) {
+        h=1;
+    }
 }
 function setup() {
     createCanvas(800,700);
@@ -36,12 +45,11 @@ function draw(){
     if (i==0) {
         var div = document.querySelector("div");  // <div></div>
         div.textContent = "Comienzan las rojas. Pulsa para empezar."; // <div>Hola a todos</div>
-        div.textContent;
+        i=2;
     }
     if (i==1) {
         var div = document.querySelector("div");  // <div></div>
         div.textContent = "Comienzan las azules. Pulsa para empezar."; // <div>Hola a todos</div>
-        div.textContent;
     }
     //fill(COLOR_JUG1);
     //ellipse(100, 600, 75, 75);
@@ -49,7 +57,6 @@ function draw(){
     addEventListener("click", clickColumna);
 }
 function clickColumna(_event) {
-    if (a<6 && b<6 && c<6 && d<6 && e<6 && f<6 && g<6) {
     //if (breakdraw==0) {
     //Según si i sea o no múltiplo de 2, le tocará a un jugador u otro, añadiendo 1 a i a cada movimiento, de modo que se vayan alternando los turnos
     if (i%2==0) {
@@ -98,13 +105,12 @@ function clickColumna(_event) {
         }
         //if () {
         //    var div = document.querySelector("div");
-        //    div.textContent;
+        //    
         //    breakdraw=1;
         //}
         if (i%2==1) {
             var div = document.querySelector("div");  // <div></div>
-            div.textContent = "Es el turno de las azules."; // <div>Hola a todos</div>
-            div.textContent;
+            div.textContent = "Es el turno de las azules."; // <div>Hola a todos</div>   
         }
         //Al terminar el turno, se le sumará 1 a i, haciendo que no sea múltiplo de 2 y le toquen a las azules
     } else {
@@ -153,44 +159,9 @@ function clickColumna(_event) {
         }
         if (i%2==0) {
             var div = document.querySelector("div");
-            div.textContent = "Es el turno de las rojas.";
-            div.textContent;
+            div.textContent = "Es el turno de las rojas.";   
         }
         //Al terminar las azules su turno, se le vuelve a sumar 1 a i, haciéndolo de nuevo múltiplo de 2, por lo que vuelve a ser el turno de las rojas. Esto se repite en bucle
         //Depende de la columna que se elija, se le añade 1 a las variables a, b, c, d, e, f o g para que si un jugador ya ha puesto en alguna de esas columnas, el siguiente movimiento ahí sea encima de la última ficha y no se solapen
-    }
-//}
-    } else {
-        if (mouseX >= 100-75/2 && mouseX <= 100+75/2 && a < 6) {
-            fill(COLOR_JUG2);
-            ellipse(100,600-100*a, 75,75);
-        }
-        if (mouseX >= 200-75/2 && mouseX <= 200+75/2 && b < 6) {
-            fill(COLOR_JUG2);
-            ellipse(200, 600-100*b, 75,75);
-        }
-        if (mouseX >= 300-75/2 && mouseX <= 300+75/2 && c < 6) {
-            fill(COLOR_JUG2);
-            ellipse(300, 600-100*c, 75,75);
-        }
-        if (mouseX >= 400-75/2 && mouseX <= 400+75/2 && d < 6) {
-            fill(COLOR_JUG2);
-            ellipse(400, 600-100*d, 75,75);
-        }
-        if (mouseX >= 500-75/2 && mouseX <= 500+75/2 && e < 6) {
-            fill(COLOR_JUG2);
-            ellipse(500, 600-100*e, 75,75);
-        }
-        if (mouseX >= 600-75/2 && mouseX <= 600+75/2 && f < 6) {
-            fill(COLOR_JUG2);
-            ellipse(600, 600-100*f, 75,75);
-        }
-        if (mouseX >= 700-75/2 && mouseX <= 700+75/2 && g < 6) {
-            fill(COLOR_JUG2);
-            ellipse(700, 600-100*g, 75, 75);
-        }
-        var div = document.querySelector("div");
-            div.textContent = "Ha sido empate.";
-            div.textContent;
     }
 }
